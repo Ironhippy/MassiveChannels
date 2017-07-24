@@ -141,6 +141,7 @@ public class ChatEngine extends Engine
 			{
 				String message = Obf.obfuscate(event.getMessage(), focused, MPlayer.get(player), MPlayer.get(recipientRaw));
 				String format = parser.parseLocal(focused.getFormat(), focused, MPlayer.get(player), message);
+				format = parser.parse(focused.getFormat(), focused, MPlayer.get(player), message);
 				
 				recipientRaw.sendMessage(format);
 			}
@@ -194,10 +195,14 @@ public class ChatEngine extends Engine
 	private boolean containsAlias(String message)
 	{
 		boolean ret = false;
+		String alias = "";
+		
 		if (message.contains(":") && !message.startsWith(":")) ret = true;
 		
-		String alias = message.substring(0, message.indexOf(':'));
-		
+		try {
+			alias = message.substring(0, message.indexOf(':'));
+		} catch(StringIndexOutOfBoundsException e) { }
+			
 		if (alias.contains(" ")) ret = false;
 		
 		return ret;
