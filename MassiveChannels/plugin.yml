@@ -1,0 +1,7 @@
+name: MassiveChannels
+version: 2.13.0-SNAPSHOT
+main: net.graystone.java.channels.MassiveChannels
+author: Ironhippy
+website: https://gray-stone.net
+depend: [MassiveCore]
+softdepend: [PermissionsEx]
