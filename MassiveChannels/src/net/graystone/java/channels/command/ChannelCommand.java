@@ -1,7 +1,5 @@
 package net.graystone.java.channels.command;
 
-import org.bukkit.command.CommandSender;
-
 import com.massivecraft.massivecore.command.MassiveCommand;
 import com.massivecraft.massivecore.util.Txt;
 
@@ -22,11 +20,10 @@ public class ChannelCommand extends MassiveCommand
 	}
 	
 	@Override
-	public void senderFieldsOuter(CommandSender sender)
+	public void senderFields(boolean set)
 	{
-		super.senderFieldsOuter(sender);
 		
-		this.player = MPlayer.get(sender);
+		this.player = set ? MPlayer.get(sender) : null;
 	}
 	
 }
