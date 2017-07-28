@@ -3,27 +3,27 @@ package net.graystone.java.channels;
 public enum Perm
 {
 	
-	CREATE("channels.create"),
-	REMOVE("channels.remove"),
-	FOCUS("channels.focus"),
-	INFO("channels.info"),
-	LIST("channels.list"),
+	CREATE("admin.create"),
+	REMOVE("admin.remove"),
+	FOCUS("default.focus"),
+	INFO("default.info"),
+	LIST("default.list"),
 	
-	IGNORE("channels.ignore"),
+	IGNORE("default.ignore"),
 	
-	LISTEN("channels.listen"),
-	LEAVE("channels.leave"),
+	LISTEN("default.listen"),
+	LEAVE("default.leave"),
 	
-	ME("me"),	
-	PM("pm"),
+	ME("default.me"),	
+	PM("default.pm"),
 	
 	NICK_USE("nicknames.use"),
 	NICK_SET("nicknames.set"),
 	NICK_PREFIX_SET("nicknames.prefixes"),
 	
-	STAFF_DESC("staffdesc"),
+	STAFF_DESC("admin.staffdesc"),
 	
-	CAN_COLOR("chat.color");
+	CAN_COLOR("admin.color");
 	
 	private String node;
 	
