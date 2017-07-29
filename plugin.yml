@@ -1,8 +1,8 @@
 name: MassiveChannels
 version: 2.13.0-SNAPSHOT
 main: net.graystone.java.channels.MassiveChannels
-author: Ironhippy and Flooshera
+authors: [Ironhippy, Kerfloosh]
 website: https://gray-stone.net
 depend: [MassiveCore]
-description: MassiveChannels is a Spigot styled chat system created by Ironhippy and Flooshera for roleplay servers!
+description: <i>MassiveChannels is a Spigot styled chat system created by <pink>Ironhippy <i>and <pink>Flooshera <i>for roleplay servers!
 softdepend: [PermissionsEx]
