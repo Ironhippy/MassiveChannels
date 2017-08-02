@@ -1,6 +1,6 @@
 name: MassiveChannels
 version: 2.13.0-SNAPSHOT
-main: net.graystone.java.channels
+main: net.graystone.java.channels.MassiveChannels
 description: <aqua>MassiveChannels <i>was developed by <pink>Flashera <i>and <pink>Ironhippy <i>for the purpose of implementing a multi-channel chat system specifically for roleplay servers.
 website: http://gray-stone.net
 authors: [Ironhippy, Flashera]
