@@ -68,6 +68,8 @@ public class ChatEngine extends Engine
 		if (isBlank(event.getMessage())) { event.setCancelled(true); return; }
 		if (testForException(event.getMessage(), event.getPlayer())) { if (event.isCancelled()) return; this.fixException(event.getPlayer()); event.setCancelled(true); return; }
 		
+		
+		
 		MChannel focused = MPlayer.get(event.getPlayer()).getFocusedChannel();
 		if (focused.isLocal() || focused.isWorldSelective()) return;
 		
