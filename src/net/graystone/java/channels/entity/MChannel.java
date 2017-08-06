@@ -116,4 +116,10 @@ public class MChannel extends Entity<MChannel>
 	{
 		return this.chatColour+this.getId()+" Channel";
 	}
+	
+	private List<String> channelTags = new ArrayList<String>();
+	public void addTag(String arg0) { this.channelTags.remove(arg0); this.changed(); }
+	public void removeTag(String arg0) { this.channelTags.remove(arg0); this.changed(); }
+	public boolean containsTag(String arg0) { return this.channelTags.contains(arg0); }
+	
 }
