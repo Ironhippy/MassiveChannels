@@ -122,6 +122,7 @@ public class ChatEngine extends Engine
 		
 		MChannel focused = MPlayer.get(event.getPlayer()).getFocusedChannel();
 		if (!focused.isLocal()) return;
+		if (event.isCancelled()) return;
 		
 		event.getRecipients().clear();
 		

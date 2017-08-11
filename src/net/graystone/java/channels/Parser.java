@@ -23,7 +23,7 @@ public class Parser
 		}
 		if (format.contains(MassiveChannels.MESSAGE))
 		{
-			format = format.replaceAll(MassiveChannels.MESSAGE, message);
+			format = format.replace(MassiveChannels.MESSAGE, message);
 		}
 		if (format.contains(MassiveChannels.NICKNAME))
 		{		
