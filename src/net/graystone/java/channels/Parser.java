@@ -1,5 +1,7 @@
 package net.graystone.java.channels;
 
+import org.bukkit.entity.Player;
+
 import com.massivecraft.massivecore.util.Txt;
 
 import net.graystone.java.channels.entity.MChannel;
@@ -12,7 +14,7 @@ public class Parser
 	private static Parser i = new Parser();
 	public static Parser get() { return Parser.i; }
 	
-	public String parse(String format, MChannel channel, MPlayer player, String message)
+	public String parse(String format, MChannel channel, Player p, MPlayer player, String message)
 	{
 		
 		format = Txt.parse(format);
@@ -32,6 +34,10 @@ public class Parser
 		if (format.contains(MassiveChannels.USERNAME))
 		{			
 			format = format.replaceAll(MassiveChannels.USERNAME, player.getName());
+		}
+		if (format.contains(MassiveChannels.DISPLAYNAME))
+		{			
+			format = format.replaceAll(MassiveChannels.DISPLAYNAME, p.getDisplayName());
 		}
 		if (format.contains(MassiveChannels.LOCAL))
 		{

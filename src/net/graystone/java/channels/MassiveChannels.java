@@ -28,6 +28,7 @@ public class MassiveChannels extends MassivePlugin
 	
 	public static String USERNAME = "%playername%";
 	public static String NICKNAME = "%nickname%";
+	public static String DISPLAYNAME = "%displayname%";
 	public static String CHANNEL_NAME = "%channel_name%";
 	public static String MESSAGE = "%message%";
 	public static String LOCAL = "%local%";

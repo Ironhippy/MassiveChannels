@@ -64,6 +64,8 @@ public class ChatEngine extends Engine
 	@EventHandler(priority=EventPriority.LOW)
 	public void processGlobalChat(AsyncPlayerChatEvent event)
 	{
+		Player p = event.getPlayer();
+		
 		if (containsAlias(event.getMessage())) { event.setCancelled(true); return; }
 		if (isBlank(event.getMessage())) { event.setCancelled(true); return; }
 		if (testForException(event.getMessage(), event.getPlayer())) { if (event.isCancelled()) return; this.fixException(event.getPlayer()); event.setCancelled(true); return; }
@@ -82,7 +84,7 @@ public class ChatEngine extends Engine
 			}
 		}
 		
-		String format = parser.parse(focused.getFormat(), focused, MPlayer.get(event.getPlayer()), event.getMessage());
+		String format = parser.parse(focused.getFormat(), focused, p, MPlayer.get(event.getPlayer()), event.getMessage());
 		
 		event.setFormat(format);
 	}
@@ -90,6 +92,8 @@ public class ChatEngine extends Engine
 	@EventHandler(priority=EventPriority.LOW)
 	public void processWorldChat(AsyncPlayerChatEvent event)
 	{
+		Player p = event.getPlayer();
+		
 		if (containsAlias(event.getMessage())) { event.setCancelled(true); return; }
 		if (isBlank(event.getMessage())) { event.setCancelled(true); return; }
 		if (testForException(event.getMessage(), event.getPlayer())) { if (event.isCancelled()) return; this.fixException(event.getPlayer()); event.setCancelled(true); return; }
@@ -108,7 +112,7 @@ public class ChatEngine extends Engine
 			}
 		}
 		
-		String format = parser.parse(focused.getFormat(), focused, MPlayer.get(source), event.getMessage());
+		String format = parser.parse(focused.getFormat(), focused, p, MPlayer.get(source), event.getMessage());
 		
 		event.setFormat(format);
 	}
@@ -144,14 +148,14 @@ public class ChatEngine extends Engine
 			{
 				String message = Obf.obfuscate(event.getMessage(), focused, MPlayer.get(player), MPlayer.get(recipientRaw));
 				String format = parser.parseLocal(focused.getFormat(), focused, MPlayer.get(player), message);
-				format = parser.parse(focused.getFormat(), focused, MPlayer.get(player), message);
+				format = parser.parse(focused.getFormat(), focused, player, MPlayer.get(player), message);
 				
 				recipientRaw.sendMessage(format);
 			}
 			
 		}
 		
-		String format = parser.parse(focused.getFormat(), focused, MPlayer.get(player), event.getMessage());
+		String format = parser.parse(focused.getFormat(), focused, player, MPlayer.get(player), event.getMessage());
 		for (Player recipient : event.getRecipients())
 		{
 			recipient.sendMessage(format);
@@ -222,7 +226,7 @@ public class ChatEngine extends Engine
 		MPlayer target = MPlayer.get(player);
 		try
 		{
-			parser.parse(MChannelColl.get().get(MChannelColl.GLOBAL).getFormat(), MChannelColl.get().get(MChannelColl.GLOBAL), target, message);
+			parser.parse(MChannelColl.get().get(MChannelColl.GLOBAL).getFormat(), MChannelColl.get().get(MChannelColl.GLOBAL), player, target, message);
 		} catch (IllegalArgumentException exception)
 		{
 			return true;

@@ -25,6 +25,10 @@ public class CmdChannel extends ChannelCommand
 		
 		this.addChild(new CmdFocus());
 		this.addChild(new CmdList());
+		
+		this.addChild(new DisplayNameCommand());
+		this.addChild(new SetDisplayNameCommand());
+		
 		this.addChild(new MassiveCommandVersion(MassiveChannels.get()));
 	}
 	

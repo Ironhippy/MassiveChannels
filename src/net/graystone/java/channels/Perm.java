@@ -23,7 +23,9 @@ public enum Perm
 	
 	STAFF_DESC("admin.staffdesc"),
 	
-	CAN_COLOR("admin.color");
+	CAN_COLOR("admin.color"), 
+	
+	DISPLAYNAME_USE("displayname.use");
 	
 	private String node;
 	

@@ -69,7 +69,5 @@ public class CmdSet extends ChannelCommand
 		
 		msg("<i>You have set <pink>"+target.getName()+"'s nickname <i>to: <pink>"+Txt.upperCaseFirst(nick)+"<i>.");
 		
-		
-		
 	}
 }
