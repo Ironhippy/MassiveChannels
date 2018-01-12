@@ -78,6 +78,10 @@ public class MPlayer extends SenderEntity<MPlayer>
 	public void setNick(String arg0) { this.nickName = arg0; this.changed(); }
 	public String getNick() { if (nickName==null) return this.getName(); return this.nickName; }
 	
+	private String displayName;
+	public void setDisplayName(String arg0) { this.displayName = arg0; this.changed(); }
+	public String getDisplayName() { if (displayName==null) return this.getName(); return this.displayName; }
+	
 	public PS getLocation () { return PS.valueOf(this.getPlayer().getLocation()); }
 	
 	public String getPrefix()

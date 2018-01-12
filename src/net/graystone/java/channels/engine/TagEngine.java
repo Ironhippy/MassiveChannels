@@ -142,4 +142,18 @@ public class TagEngine extends Engine
 		}
 	}
 	
+	@EventHandler
+	public void PlayerJoin(PlayerJoinEvent event)
+	{
+		Player rawPlayer = event.getPlayer();
+		MPlayer player = MPlayer.get(rawPlayer);
+		
+		String name = player.getDisplayName();
+		
+		if(rawPlayer.hasPermission("massivechannels.chat.color")) name = Txt.parse(name);
+		
+		rawPlayer.setDisplayName(name);
+		
+	}
+	
 }

@@ -50,7 +50,7 @@ public class MassiveChannels extends MassivePlugin
 		this.activate(ChatEngine.get(), TagEngine.get());
 		
 		this.activate(CmdChannel.get(), CmdIgnore.get(), CmdUnignore.get(), CmdNickname.get(), CmdMessage.get(), CmdReply.get());
-		
+				
 		TagEngine.setTag();
 		
 		if (this.allowPEX) log(Txt.parse("&dPermissionsEx Integration <i>activated!"));
