@@ -182,7 +182,12 @@ public class ChatEngine extends Engine
 	{
 		double innerRadius = channel.getInnerRadius();
 		
-		if (PS.locationDistance(source.getLocation(), recipient.getLocation()) < innerRadius) return true;
+		try {
+			if (PS.locationDistance(source.getLocation(), recipient.getLocation()) < innerRadius) return true;
+		}
+		catch (NullPointerException e) {
+			
+		}
 		
 		return false;
 	}
@@ -192,9 +197,14 @@ public class ChatEngine extends Engine
 		double innerRadius = channel.getInnerRadius();
 		double outerRadius = channel.getOuterRadius();
 		
-		double distance = PS.locationDistance(source.getLocation(), recipient.getLocation());
-		
+		try {		
+			double distance = PS.locationDistance(source.getLocation(), recipient.getLocation());
+
 		if (distance >= innerRadius && distance <= outerRadius) return true;
+		}
+		catch (NullPointerException e) {
+		
+		}
 		
 		return false;
 	}
