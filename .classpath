@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/Nathan/Downloads/Test Server/plugins/MassiveCore.jar"/>
+	<classpathentry kind="lib" path="D:/Nathan/Downloads/Test Server/minecraft_server.jar"/>
+	<classpathentry kind="lib" path="D:/Nathan/Downloads/Test Server/plugins/PermissionsEx-1.23.4.jar"/>
+	<classpathentry kind="lib" path="D:/Nathan/Pictures/citizens-2.0.22-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
